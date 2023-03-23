@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>{{ document['DISPLAY OF EACH DOCUMENT (each patient)'] }}</h1>
+        <ul>
+      <li><strong>time:</strong> {{ time }}</li>
+            {% for document in documents %}
+      <li>
+        <a href="/document/{{ document._id }}/plot"onclick="return navigateDir('View ECG Plot')">>View ECG Plot</a>
+      </li>
+            {% endfor %}
+            <tr class="subdir">
+      <td><a href="/document/{{ document._id }}/plot"onclick="return navigateDir('View ECG Plot')">View ECG Plot</a></td><td>
+            <a href="/download/{{ document._id }}">Download</a>
+          </td>
+    </tr>
+        </ul>
+
+        </body>
+</html>

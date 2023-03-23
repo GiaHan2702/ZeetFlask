@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document Plot</title>
+  </head>
+  <body>
+    <h1>Document Plot: {{ document.filename }}</h1>
+    {% if plot_image %}
+      <img src="data:image/png;base64,{{ plot_image }}" alt="Plot Image">
+    {% endif %}
+    {% if label %}
+      <p>Predicted Disease Type: {{ label }}</p>
+    {% endif %}
+    {% if data %}
+      <h3>Disease Type Counts:</h3>
+      <ul>
+        {% for key, value in data.items() %}
+          <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% if not plot_image %}
+      <p>{{ label }}</p>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document Links</title>
+    </head>
+    <body>
+        <h1>Document Links</h1>
+        <ul>
+            {% for url in urls %}
+            <li><a href="{{ url }}">Document {{ loop.index }}</a></li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
